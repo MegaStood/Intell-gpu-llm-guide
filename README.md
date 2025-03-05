@@ -1,8 +1,6 @@
 
 README.md (Tutorial Content)
-markdown
-Copy
-Edit
+
 # Running LLMs on Intel GPUs: A Complete Guide
 
 This tutorial demonstrates how to set up Intel GPU acceleration for Large Language Models (LLMs) on an Intel 12th Generation CPU with Iris Xe integrated graphics. We'll cover everything from initial driver setup to running models with a graphical interface.
@@ -64,9 +62,7 @@ sudo reboot
 Install oneAPI Base Toolkit
 The oneAPI toolkit provides libraries for GPU acceleration:
 
-bash
-Copy
-Edit
+
 # Add Intel oneAPI repository
 wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
   | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
@@ -91,9 +87,7 @@ Set Up Ollama with Intel GPU Support
 In this guide, we’ll use a special Intel-optimized version of Ollama that’s pre-configured for Intel GPUs.
 
 Download and Set Up Portable Ollama
-bash
-Copy
-Edit
+
 # Create directory for Ollama
 mkdir -p ~/intel-ollama
 cd ~/intel-ollama
@@ -108,9 +102,7 @@ tar -xzf ipex-ollama-linux-x64.tgz
 chmod +x start-ollama.sh
 chmod +x ollama
 Create Convenient Launcher Scripts
-bash
-Copy
-Edit
+
 # Create launcher directory
 mkdir -p ~/.local/bin
 
@@ -155,16 +147,12 @@ source ~/.bashrc
 Run Ollama with Intel GPU Acceleration
 Now you can start the Ollama server with GPU acceleration:
 
-bash
-Copy
-Edit
+
 # Start the server
 intel-ollama-server
 Then, in a new terminal, pull and run a model:
 
-bash
-Copy
-Edit
+
 # Pull a model compatible with your GPU
 intel-ollama pull gemma:7b
 
@@ -174,9 +162,7 @@ Set Up Open WebUI (Optional)
 If you want a graphical interface to interact with Ollama, you can use Open WebUI.
 
 Install Prerequisites
-bash
-Copy
-Edit
+
 # Install Node.js LTS
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -185,9 +171,7 @@ sudo apt install -y nodejs
 node -v  # Should be at least v20.x.x
 npm -v   # Should be at least 10.x.x
 Set Up Open WebUI
-bash
-Copy
-Edit
+
 # Clone repository
 git clone https://github.com/open-webui/open-webui.git
 cd open-webui/
@@ -215,9 +199,7 @@ Go to Settings -> Connections and set the Ollama API URL to http://localhost:114
 Monitoring GPU Usage
 Use Intel's GPU tools to monitor utilization:
 
-bash
-Copy
-Edit
+
 # Install Intel GPU tools
 sudo apt install intel-gpu-tools
 
